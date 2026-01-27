@@ -3,17 +3,15 @@
 
 **Teaching Assistant:** Julia Wilkins
 
-# EVERYTHING IS UNDER CONSTRUCTION WITH MIGRATION TO TORCH!
 
 Welcome to Machine Listening! In this repository you'll find the assignment Jupyter notebooks and any supplemental material you might need to get started on the course assignments. Note that the notebooks will only be visible here at the time of assignment release.
 
 Steps to completing and turning in your assignments: 
 
-1. Download the necessary notebook from this repository (e.g. `assignment1.ipynb`). 
+1. Download the necessary directory from this repository (e.g. `assignment`/, contains `assignment1.ipynb` and any needed files). 
 2. Run the Jupyter notebook for the assignment locally (guide below) and complete the code and written questions.
 3. Make sure your full notebook is **evaluated**.
-4. Submit the evaluated `.ipynb` file to [Gradescope](https://www.gradescope.com/courses/953045).
-
+4. Submit the **evaluated** `.ipynb` file to Brightspace.
 ----
 
 Below I've put together a guide for working with Jupyter notebooks:
