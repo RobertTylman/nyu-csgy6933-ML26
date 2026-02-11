@@ -70,3 +70,10 @@ coverage.xml
 # =====================
 Thumbs.db
 
+
+# =====================
+# Large data files
+# =====================
+*.wav
+*.tar.gz
+nsynth_high_subset/
