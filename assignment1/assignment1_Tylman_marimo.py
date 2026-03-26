@@ -137,7 +137,7 @@ def _(get_sinewave, plt):
     plt.ylabel('Amplitude')
     plt.xlabel('Time (samples)')
     plt.title('Simple Sinewaves')
-    plt.show()
+    plt.gcf()
     return
 
 
@@ -154,7 +154,7 @@ def _(get_sinewave, np, plt):
     plt.ylabel('Amplitude')
     plt.xlabel('Time (seconds)')
     plt.title('Simple Sinewaves')
-    plt.show()
+    plt.gcf()
     return
 
 
@@ -171,7 +171,7 @@ def _(get_sinewave, np, plt):
     plt.ylabel('Amplitude')
     plt.xlabel('Time (seconds)')
     plt.title('Simple Sinewaves')
-    plt.show()
+    plt.gcf()
     return
 
 
@@ -196,7 +196,7 @@ def _(get_sinewave, np, plt):
     plt.ylabel('Amplitude')
     plt.xlabel('Time (seconds)')
     plt.title('Simple sinewaves')
-    plt.show()
+    plt.gcf()
     return
 
 
@@ -223,7 +223,7 @@ def _(get_sinewave, plt):
     plt.ylabel('Amplitude')
     plt.xlabel('Time (samples)')
     plt.title('Simple sinewaves')
-    plt.show()
+    plt.gcf()
     return wav1_4, wav2_4
 
 
@@ -266,7 +266,7 @@ def _(librosa, np, plt):
     plt.ylabel('Amplitude')
     plt.xlabel('Time (seconds)')
     plt.title('Audio Signal')
-    plt.show()
+    plt.gcf()
     return sr_5, y
 
 
@@ -438,7 +438,7 @@ def _(plt):
         plt.xlabel('Freq (Hz)')
         plt.ylabel('DFT  Magnitude |X(freq)|')
         plt.title(title)
-        plt.show()
+        return plt.gcf()
 
     return (plot_spectrum,)
 
@@ -455,7 +455,6 @@ def _(compute_basic_spectrum, get_sinewave, mix, plot_spectrum, sr_5):
     x = get_sinewave(amplitude=0.5, frequency=2000, duration=0.02, sr=sr_5) + mix.value * get_sinewave(amplitude=0.5, frequency=4000, duration=0.02, sr=sr_5)
     freqs, _mags = compute_basic_spectrum(x, sr_5)
     plot_spectrum(freqs, _mags, 'Test Spectrum (2000Hz + 4000Hz)')
-    mix.value
     return
 
 
@@ -653,7 +652,7 @@ def _(librosa, np, plt, sr_7):
         log_spec = librosa.amplitude_to_db(np.abs(stft), ref=np.max)
         librosa.display.specshow(log_spec, y_axis='log', sr=sr_7, hop_length=hop_length, x_axis='time')
         plt.title(title)
-        plt.show()
+        return plt.gcf()
 
     return (plot_spec,)
 
@@ -663,9 +662,10 @@ def _(librosa, plot_spec, simple_stft):
     sr_8 = 16000
     x_1, rate = librosa.load('assignment1_chord.wav', sr=sr_8)
     _stft = simple_stft(x_1, 1024, 128, window_type='hann')
-    plot_spec(_stft, 128, title='STFT of Chord')
+    _plot = plot_spec(_stft, 128, title='STFT of Chord')
     print(f'Frequency bins: expected 513, got {_stft.shape[0]}')
     print(f'Time frames: expected 368, got {_stft.shape[1]}')
+    _plot
     return (x_1,)
 
 
